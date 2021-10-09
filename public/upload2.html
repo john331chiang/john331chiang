@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="upload.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
+<link href="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.js"></script>
+
+  </head>
+<body>
+<script>
+
+$(document).ready(function(){
+  $('#today').datepicker({
+    format: 'mm/dd/yyyy'
+})
+  $('#today').datepicker('setDate', new Date());
+
+  var input = $('#single-input').clockpicker({
+    placement: 'bottom',
+    align: 'left',
+    autoclose: true,
+    'default': 'now'
+});
+  $('#check-minutes').click(function(e){
+    // Have to stop propagation here
+    e.stopPropagation();
+    input.clockpicker('show')
+            .clockpicker('toggleView', 'minutes');
+});
+  var input2 = $('#single-input2').clockpicker({
+    placement: 'bottom',
+    align: 'left',
+    autoclose: true,
+    'default': 'now'
+});
+  $('#check-minutes2').click(function(e){
+    // Have to stop propagation here
+    e.stopPropagation();
+    input2.clockpicker('show')
+            .clockpicker('toggleView', 'minutes');
+});
+  var input3 = $('#single-input3').clockpicker({
+    placement: 'bottom',
+    align: 'left',
+    autoclose: true,
+    'default': 'now'
+});
+  $('#check-minutes3').click(function(e){
+    // Have to stop propagation here
+    e.stopPropagation();
+    input3.clockpicker('show')
+            .clockpicker('toggleView', 'minutes');
+});
+  
+
+})
+
+// Manually toggle to the minutes view
+
+</script>
+<h2>更改健檢時間登錄</h2>
+
+<form method="post" action="/a" autocomplete="off">
+  <input id="user_input" type="text" name="_id">貼上id修改資料</input>
+  日期:<br>
+  <input type="text" id="today" name="bday" value="">
+  <br>術房:<br>
+  <select name="room" >
+    <option value="P1">P1</option>
+    <option value="P2">P2</option>
+    <option value="P3">P3</option>
+  </select>
+ <br>
+  病患入室:<br>
+  <input type="text" name="entertime" id="single-input" value=""><button type="button" id="check-minutes" >病患入室時間</button> 
+  <br><br>
+  麻醉開始:<br>
+  <input type="text" name="anetime" id="single-input2" value=""><button type="button" id="check-minutes2" >麻醉開始時間</button>
+  
+  <br><br>
+ 腸胃鏡開始:<br>
+  <input type="text" name="doctortime" id="single-input3" value=""><button type="button" id="check-minutes3">健檢醫師開始時間</button>
+  
+  <br>
+ <input id="submit" type="submit" value="提交"></input>
+
+</form>
+<div class="input-group clockpicker">
+<h2><a href="./search.html" target="_blank">時間資料查詢</a></h2>
+
+</html>
