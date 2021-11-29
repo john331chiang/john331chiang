@@ -21,7 +21,7 @@ app.use(methodOverride('_method'))
 //local:用此mongoose.connect('mongodb://localhost:27017/vghks',{user:'root', pass:'qeasdwsxzc!@3'},{useNewUrlParser: true});
 //cloud:用此mongoose.connect('mongodb+srv://John:a4a5gynn@cluster0-jzbmu.mongodb.net/test',{useNewUrlParser: true});
 // Use connect method to connect to the server
-mongoose.connect('mongodb://localhost:27017/test',{useNewUrlParser: true});
+mongoose.connect('mongodb+srv://John:a4a5gynn@cluster0-jzbmu.mongodb.net/test1',{useNewUrlParser: true});
     var blogSchema = new Schema({
     bday:  String,//{type: Date, default: Date.now},
     room:  String,
