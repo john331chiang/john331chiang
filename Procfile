@@ -1,1 +1,1 @@
-web: node parctice_pass.js
+web: node parctice.js
